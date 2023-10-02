@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>namaste...</title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="stylesheet" href="./styles/global.css">
+    <link rel="stylesheet" href="./styles/deck.css">
+    <link rel="stylesheet" href="./styles/todo.css">
+    <link rel="stylesheet" href="./styles/player.css">
+    <link rel="stylesheet" href="./styles/weather.css">
+    <link rel="stylesheet" href="./styles/folder.css">
+    <link rel="stylesheet" href="./styles/popup.css">
+</head>
+
+<body>
+    <main>
+        <section class="left">
+            <aside id="todo">
+                <h2 id="todist_date">Sep 15, 2023, @todoist</h2>
+                <ul id="todolist"></ul>
+            </aside>
+            <div class="ctas">
+                <button class="createFolderBtn">
+                    Create A New Bookmark
+                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24">
+                        <path fill="#fff"
+                            d="M13 7h-2v4H7v2h4v4h2v-4h4v-2h-4V7zm-1-5C6.48 2 2 6.48 2 12s4.48 10 10 10s10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8s8 3.59 8 8s-3.59 8-8 8z" />
+                    </svg>
+                </button>
+            </div>
+        </section>
+        <section class="folders">
+            <!-- for whole folder view -->
+            <div class="pop">
+                <div class="container"> </div>
+                <!-- for showoing whole bookmarks -->
+                <button class="cross">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 16 16">
+                        <g fill="none" stroke="#888888" stroke-linecap="round" stroke-linejoin="round"
+                            stroke-width="1.5">
+                            <path d="m10.25 5.75l-4.5 4.5m0-4.5l4.5 4.5" />
+                            <circle cx="8" cy="8" r="6.25" />
+                        </g>
+                    </svg>
+                </button>
+                <p class="bookmark" id="nameForWHoleBookmark">
+                    bookmark
+                </p>
+            </div>
+
+            <!-- for Createing A bookmark -->
+            <div class="createbookmarkpopup">
+                <button class="crosscreatebookmarkpopup">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 16 16">
+                        <g fill="none" stroke="#888888" stroke-linecap="round" stroke-linejoin="round"
+                            stroke-width="1.5">
+                            <path d="m10.25 5.75l-4.5 4.5m0-4.5l4.5 4.5" />
+                            <circle cx="8" cy="8" r="6.25" />
+                        </g>
+                    </svg>
+                </button>
+                <h3>Create A New Bookmark</h3>
+                <form id="BtnCreateBookmark">
+                    <div>
+                        <label for="Bookmark_Name">Bookmark Name</label>
+                        <input type="text" id="Bookmark_Name" name="Bookmark_Name">
+                    </div>
+                    <div>
+                        <label for="Bookmark_url">Bookmark Url</label>
+                        <input type="url" id="Bookmark_url" name="Bookmark_url">
+                    </div>
+                    <button type="submit" class="createBookmark">
+                        Done
+                    </button>
+                </form>
+
+            </div>
+            <!-- for Createing A folder -->
+            <div class="createfolderpopup">
+                <button class="crosscreatefolderkpopup">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 16 16">
+                        <g fill="none" stroke="#888888" stroke-linecap="round" stroke-linejoin="round"
+                            stroke-width="1.5">
+                            <path d="m10.25 5.75l-4.5 4.5m0-4.5l4.5 4.5" />
+                            <circle cx="8" cy="8" r="6.25" />
+                        </g>
+                    </svg>
+                </button>
+                <h3>Create A New Group</h3>
+                <form id="BtnCreateFolder">
+                    <div>
+                        <label for="Group_Name">Group Name</label>
+                        <input type="text" id="Group_Name" name="Group_Name">
+                    </div>
+                    <button type="submit" class="createBookmark">
+                        Done
+                    </button>
+                </form>
+            </div>
+        </section>
+        <section class="right">
+            <div class="blur"></div>
+            <aside id="weather">
+                <h1 id="weather_time">00:00 AM</h1>
+                <h3 id="weather_date">Sep 15th, 2023</h3>
+                <h3 id="weather_locn">Nanital, Uttarakhand, Bharat</h3>
+                <h3 id="weather_temp">Raniy, &#127783; 00°C</h3>
+            </aside>
+            <aside id="player">
+                <figure>
+                    <img src="https://i.ytimg.com/vi/rEVtwAimpq8/mqdefault.jpg" alt="music">
+                </figure>
+                <div class="info">
+                    <h1>Paisa Hai Toh Lscdzyrics</h1>
+                    <p>Farzi</p>
+                </div>
+                <div class="controls">
+                    <div class="playback">
+                        <img src="./assets/next.svg" alt="next">
+                        <img src="./assets/play.svg" alt="play">
+                        <img src="./assets/prev.svg" alt="prev">
+                        <img src="./assets/volumne.svg" alt="volumne">
+                    </div>
+                    <div class="range-slider">
+                        <input class="range-slider__range" type="range" value="50%" min="0" max="100">
+                        <span class="range-slider__value"></span>
+                    </div>
+                </div>
+            </aside>
+        </section>
+    </main>
+    <nav id="deck"></nav>
+</body>
+<script type="module" src="index.js"></script>
+<script type="module" src="./components/pop.js"></script>
+<script src="bundle.js"></script>
+
+</html>
