@@ -1,25 +1,25 @@
-import { Bookmark, Group } from "../api/bookmark.js";
-import { create, read } from "../middlewares/db.js";
-import { insertHTML } from "../middlewares/event.js";
+import { Bookmark, Group } from '../api/bookmark.js';
+import { create, read } from '../middlewares/db.js';
+import { insertHTML } from '../middlewares/event.js';
 
 const folders = document.querySelector('.folders');
 
-export default async function loadFolders() {
-    var Groups = await read('Folders') ?? [];
-    return Groups.map(Group => {
+(async function main() {
+    var Groups = (await read('Folders')) ?? [];
+    return Groups.map((Group) => {
         var html;
         var bookmarks_html = [];
         const { Name, Id, Bookmarks } = Group;
-        Bookmarks.map(Bookmark => {
+        Bookmarks.map((Bookmark) => {
             const ele = `
-        <a href=${Bookmark.Link} >
+        <a target="_blank" href=${Bookmark.Link} >
             <div class="folder">
                 <p>${Bookmark.Name}</p>
                 <img src="./assets/folder.svg" alt="">
             </div>
-        </a>`
+        </a>`;
             bookmarks_html.push(ele);
-        })
+        });
         html = `
     <fieldset id=${`fieldset_` + Id}> 
         <legend>
@@ -34,11 +34,11 @@ export default async function loadFolders() {
     </fieldset>
     `;
         return insertHTML(folders, html, 'beforeend');
-    })
-}
+    });
+})();
 
 async function createBookmark(id, name, link) {
-    const prevData = await read('Folders') ?? null;
+    const prevData = (await read('Folders')) ?? null;
     if (!prevData) return;
     const grandParent = document.getElementById(id).parentNode.parentNode;
     const html = `
@@ -48,17 +48,18 @@ async function createBookmark(id, name, link) {
                 <img src="./assets/folder.svg" alt="bookmark">
             </div>
         </a>
-    `
+    `;
     insertHTML(grandParent, html, 'beforeend');
-    const bookmark = new Bookmark(name, link, id)
-    prevData.filter(item => { if (item.Id == id) item.Bookmarks.push(bookmark) });
-    return create('Folders', prevData)
+    const bookmark = new Bookmark(name, link, id);
+    prevData.filter((item) => {
+        if (item.Id == id) item.Bookmarks.push(bookmark);
+    });
+    return create('Folders', prevData);
 }
-
 
 async function createGroup(Name) {
     const Id = Date.now();
-    let element = document.createElement('fieldset')
+    let element = document.createElement('fieldset');
     const html = `
         <legend>
             <i>&#10140;</i>
@@ -69,11 +70,11 @@ async function createGroup(Name) {
             </svg>
         </legend>
     `;
-    element.innerHTML = html
+    element.innerHTML = html;
     folders.appendChild(element);
     const newGroup = new Group(Name, Id);
-    const prevData = await read('Folders') ?? [];
-    return create('Folders', [...prevData, newGroup])
+    const prevData = (await read('Folders')) ?? [];
+    return create('Folders', [...prevData, newGroup]);
 }
 
-export { createBookmark, createGroup }
+export { createBookmark, createGroup };

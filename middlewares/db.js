@@ -2,19 +2,19 @@
  * version: v1
  * storage: Local-storage
  * type: crud
- * encryption: true
+ * encryption: false (As of now)
  */
 
-import { decrypt, encrypt } from "./crypto.js";
+import { decrypt, encrypt } from './crypto.js';
 
 const salt = '626961287b607a6d6d287a6965';
 
 function create(key, value) {
-    console.log(value)
+    console.log(value);
     const string = JSON.stringify(value);
     // const enHash = encrypt(salt)(string);
 
-    // location.reload(); // Refresh the page
+    location.reload(); // Refresh the page
     // return localStorage.setItem(key, enHash);
     return localStorage.setItem(key, string);
 }
@@ -26,8 +26,4 @@ function read(key) {
     return JSON.parse(string);
 }
 
-export { create, read }
-
-
-
-
+export { create, read };

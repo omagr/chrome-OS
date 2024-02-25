@@ -1,5 +1,6 @@
 import { onClick, onSubmit } from '../middlewares/event.js';
 import { createBookmark, createGroup } from './bookmark.js';
+
 import uiExpandedFolders from './fullBookmarks.js';
 
 var id_for_bookmark;
@@ -46,6 +47,8 @@ onClick(closed_show_Group, () => {
 });
 
 onClick(open_create_Group, () => {
+    console.log('hwlooooooooooooooooooooooooooooooooo');
+
     if (create_Group.classList.value.includes('show')) return;
     create_Group.classList.add('show');
 });

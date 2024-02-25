@@ -14,7 +14,6 @@
     align-items: flex-start;
     justify-content: center;
     padding-top: 80px;
-
 }
 
 .container {
@@ -38,12 +37,11 @@
     outline: none;
 }
 
-
 .bookmark {
     position: absolute;
     left: 24px;
     top: 24px;
-    color: #FFF;
+    color: #fff;
     font-size: 32px;
     font-style: normal;
     font-weight: 600;
@@ -87,13 +85,12 @@
 }
 
 .createbookmarkpopup h3 {
-    color: #FFF;
+    color: #fff;
     font-size: 32px;
     font-style: normal;
     font-weight: 600;
     line-height: normal;
     letter-spacing: 0.256px;
-
 }
 
 .createbookmarkpopup div {
@@ -103,7 +100,7 @@
 }
 
 .createbookmarkpopup div label {
-    color: #FFF;
+    color: #fff;
     font-size: 16px;
     font-style: normal;
     font-weight: 600;
@@ -147,9 +144,13 @@
 .createBookmark {
     width: 480px;
     border-radius: 24px;
-    border: 2px solid #434C5E;
+    border: 2px solid #434c5e;
     background: transparent;
-    background: url("./assets/noise.svg"), lightgray 0% 0% / 154.22531366348267px 154.22531366348267px repeat, radial-gradient(185.29% 156.13% at -4.81% 0%, rgba(52, 58, 72, 0.20) 0%, rgba(233, 236, 243, 0.01) 51.19%, rgba(67, 76, 94, 0.20) 100%);
+    background: url('./assets/noise.svg'), lightgray 0% 0% / 154.22531366348267px 154.22531366348267px repeat,
+        radial-gradient(185.29% 156.13% at -4.81% 0%,
+            rgba(52, 58, 72, 0.2) 0%,
+            rgba(233, 236, 243, 0.01) 51.19%,
+            rgba(67, 76, 94, 0.2) 100%);
     background-blend-mode: overlay, normal;
     backdrop-filter: blur(40px);
     color: #fff;
@@ -163,9 +164,8 @@
 }
 
 .createBookmark:hover {
-    background: #5C38E0;
+    background: #5c38e0;
 }
-
 
 .createfolderpopup {
     display: none;
@@ -192,13 +192,12 @@
 }
 
 .createfolderpopup h3 {
-    color: #FFF;
+    color: #fff;
     font-size: 32px;
     font-style: normal;
     font-weight: 600;
     line-height: normal;
     letter-spacing: 0.256px;
-
 }
 
 .createfolderpopup div {
@@ -208,7 +207,7 @@
 }
 
 .createfolderpopup div label {
-    color: #FFF;
+    color: #fff;
     font-size: 16px;
     font-style: normal;
     font-weight: 600;

@@ -9,12 +9,5 @@
 	},
 	"author": "om agarwal",
 	"license": "ISC",
-	"dependencies": {
-		"@babel/core": "^7.23.0",
-		"@babel/preset-env": "^7.22.20",
-		"@doist/todoist-api-typescript": "^2.1.2",
-		"babelify": "^10.0.0",
-		"bcrypt": "^5.1.1",
-		"dotenv": "^16.3.1"
-	}
+	"dependencies": {}
 }

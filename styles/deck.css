@@ -9,9 +9,6 @@ nav {
             rgba(233, 236, 243, 0.01) 51.19%,
             rgba(67, 76, 94, 0.2) 100%);
     background-blend-mode: overlay, normal;
-    /* background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-position: center; */
     backdrop-filter: blur(40px);
     display: flex;
     flex-direction: row;
@@ -19,7 +16,30 @@ nav {
     align-items: center;
     padding: 0 30px;
     justify-content: space-around;
+    position: relative;
 }
+
+.pen {
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    bottom: 72px;
+    right: 12px;
+    display: grid;
+    place-content: center;
+    border: 2px solid #434c5e;
+    border-radius: 100%;
+    background: #000;
+    cursor: pointer;
+}
+
+.pen img {
+    position: relative;
+    width: 16px;
+    height: 16px;
+    fill: #fff;
+}
+
 
 .icon {
     width: 48px;

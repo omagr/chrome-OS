@@ -1,5 +1,15 @@
+@font-face {
+    font-family: 'Aeonik';
+    src: url('./../assets/fonts/Aeonik-Medium.woff2') format('woff2');
+}
+
+@font-face {
+    font-family: 'BAeonik';
+    src: url('./../assets/fonts/Aeonik-Bold.woff2') format('woff2');
+}
+
 * {
-    font-family: sans-serif;
+    font-family: 'Aeonik';
     box-sizing: border-box;
     -ms-overflow-style: none;
     scrollbar-width: none;
@@ -10,26 +20,33 @@
 }
 
 body {
-    background: url("../assets/wallpaper.jpg") no-repeat;
-    background-size: cover;
-    background-position: center center;
+    background: #000000ff;
+    /* background-size: cover;
+    background-position: center center; */
     margin: 0;
-    padding: 24px;
+    padding: 12px;
     max-width: 100vw;
     min-height: 100vh;
-    height: auto;
+    max-height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-
-
 }
 
 main {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: space-between;
+    gap: 12px;
+    height: 100vh;
+    padding: 12px 0;
 
+    flex-grow: 1;
+    /* Add a maximum height to prevent it from growing indefinitely */
+    /* max-height: 70vh; */
+    /* Adjust this value as needed */
+    /* Enable overflow-y when the content exceeds the max height */
+    overflow-y: auto;
 }
 
 main .right,
@@ -39,4 +56,38 @@ main .right,
     flex-direction: column;
     gap: 12px;
     position: relative;
+}
+
+#loadScreen {
+    z-index: 9999;
+    width: 100dvw;
+    height: 100dvh;
+    background: #000000de;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: grid;
+    place-content: center;
+}
+
+#loadScreen svg {
+    width: 48px;
+    height: 48px;
+}
+
+.hideloadScreen {
+    display: none !important;
+}
+
+aside {
+    display: flex;
+    flex-direction: row-reverse;
+    gap: 16px;
+    align-items: center;
+}
+
+.view {
+    min-width: 300px;
 }
